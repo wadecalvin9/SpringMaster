@@ -1,0 +1,164 @@
+[00:00:04.619] Server  LOG     ✓ Ready in 3.2s
+[00:00:10.123] Server  LOG     ○ Compiling /_not-found/page ...
+[00:00:23.662] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:55.569] Server  LOG     ✓ Compiled in 678ms
+[00:11:19.855] Server  LOG     ✓ Compiled in 86ms
+[00:46:54.074] Server  LOG     ✓ Compiled in 521ms
+[00:46:54.794] Server  ERROR   ⨯ TypeError: fetch failed
+[00:46:55.307] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:47:29.289] Browser ERROR   ./app/users/page.jsx:8:33
+Parsing ecmascript source code failed
+   6 |             <h1>Users</h1>
+   7 |             <ul>
+>  8 |                 {users.map((user: any) => (
+     |                                 ^
+   9 |                     <li key={user.id}>
+  10 |                         {user.name}
+  11 |                         {user.email}
+
+Expected '</', got ':'
+[00:47:41.350] Server  LOG     ✓ Compiled in 89ms
+[00:47:42.045] Server  ERROR   ⨯ TypeError: fetch failed
+[00:47:43.069] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:47:52.778] Server  ERROR   ⨯ TypeError: fetch failed
+[00:47:53.473] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:48:02.865] Server  LOG     ✓ Compiled in 96ms
+[00:48:03.161] Server  ERROR   ⨯ TypeError: users.map is not a function
+[00:48:04.156] Browser ERROR   uncaughtError: TypeError: users.map is not a function
+[00:49:32.206] Server  LOG     ✓ Compiled in 76ms
+[00:49:32.682] Server  ERROR   ⨯ TypeError: fetch failed
+[00:49:33.613] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:49:40.941] Server  ERROR   ⨯ TypeError: fetch failed
+[00:49:41.609] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:50:32.290] Server  ERROR   ⨯ TypeError: fetch failed
+[00:50:33.489] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:50:35.389] Server  ERROR   ⨯ TypeError: fetch failed
+[00:50:36.428] Browser ERROR   uncaughtError: TypeError: fetch failed
+[00:53:27.576] Server  LOG     ✓ Compiled in 739ms
+[00:53:27.990] Server  ERROR   ⨯ ReferenceError: Link is not defined
+[00:53:28.655] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[00:53:58.352] Server  LOG     ✓ Compiled in 1170ms
+[00:54:40.362] Server  LOG     ✓ Compiled in 362ms
+[00:54:55.994] Server  LOG     ✓ Compiled in 123ms
+[00:55:35.526] Server  LOG     ✓ Compiled in 103ms
+[00:57:04.319] Server  LOG     ✓ Compiled in 129ms
+[00:57:24.170] Server  LOG     ✓ Compiled in 79ms
+[00:57:48.782] Server  LOG     ✓ Compiled in 106ms
+[00:57:55.027] Server  LOG     ✓ Compiled in 54ms
+[00:58:19.684] Server  ERROR   ⨯ ReferenceError: Navigation is not defined
+[00:58:20.815] Browser ERROR   uncaughtError: ReferenceError: Navigation is not defined
+[00:58:31.857] Server  LOG     ✓ Compiled in 363ms
+[00:59:11.231] Server  LOG     ✓ Compiled in 80ms
+[01:01:54.576] Server  ERROR   ⨯ TypeError: posts.map is not a function
+[01:01:54.821] Browser ERROR   uncaughtError: TypeError: posts.map is not a function
+[01:02:44.293] Server  LOG     ✓ Compiled in 82ms
+[01:03:22.536] Server  LOG     ✓ Compiled in 85ms
+[01:03:22.832] Server  ERROR   ⨯ ReferenceError: Navigation is not defined
+[01:03:24.017] Browser ERROR   uncaughtError: ReferenceError: Navigation is not defined
+[01:03:29.868] Server  LOG     ✓ Compiled in 119ms
+[01:03:46.807] Server  LOG     ✓ Compiled in 224ms
+[01:03:49.052] Server  LOG     ✓ Compiled in 95ms
+[01:04:00.875] Server  LOG     ✓ Compiled in 168ms
+[01:04:06.346] Server  LOG     ✓ Compiled in 132ms
+[01:04:11.113] Server  LOG     ✓ Compiled in 102ms
+[01:04:33.169] Server  LOG     ✓ Compiled in 89ms
+[01:05:31.595] Server  LOG     ✓ Compiled in 255ms
+[01:05:32.000] Server  ERROR   ⨯ ReferenceError: Link is not defined
+[01:05:33.184] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[01:05:38.589] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:05:38.607] Server  LOG     ✓ Compiled in 107ms
+[01:05:39.136] Server  ERROR   ⨯ ReferenceError: Link is not defined
+[01:05:40.521] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[01:05:50.840] Server  LOG     ✓ Compiled in 145ms
+[01:07:05.245] Server  LOG     ✓ Compiled in 62ms
+[01:07:33.120] Server  LOG     ✓ Compiled in 73ms
+[01:08:12.368] Server  LOG     ✓ Compiled in 88ms
+[01:08:35.617] Browser ERROR   ./app/users/create/page.jsx:17:1
+Parsing ecmascript source code failed
+  15 |             </div>
+  16 |             );
+> 17 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[01:08:44.786] Server  LOG     ✓ Compiled in 116ms
+[01:09:02.525] Server  LOG     ✓ Compiled in 108ms
+[01:09:14.298] Server  LOG     ✓ Compiled in 73ms
+[01:09:27.196] Server  LOG     ✓ Compiled in 117ms
+[01:09:54.773] Server  LOG     ✓ Compiled in 110ms
+[01:14:10.903] Server  LOG     ✓ Compiled in 837ms
+[01:14:11.433] Server  ERROR   ⨯ ReferenceError: useState is not defined
+[01:14:14.040] Browser ERROR   uncaughtError: ReferenceError: useState is not defined
+[01:14:35.280] Browser ERROR   ./app/users/create/page.jsx:2:10
+Ecmascript file had an error
+  1 | import { headers } from "next/headers";
+> 2 | import { useState } from "react";
+    |          ^^^^^^^^
+  3 |
+  4 | export default function CreateUser() {
+  5 |     const [name, setName] = useState("");
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[01:15:07.821] Browser ERROR   ./app/users/create/page.jsx:1:10
+Ecmascript file had an error
+> 1 | import { useState } from "react";
+    |          ^^^^^^^^
+  2 |
+  3 | export default function CreateUser() {
+  4 |     const [name, setName] = useState("");
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[01:15:20.231] Server  LOG     ✓ Compiled in 258ms
+[01:18:00.802] Server  LOG     ✓ Compiled in 126ms
+[01:18:21.575] Browser ERROR   unhandledRejection: TypeError: NetworkError when attempting to fetch resource.
+[01:20:28.477] Browser ERROR   unhandledRejection: TypeError: NetworkError when attempting to fetch resource.
+[01:23:34.818] Browser ERROR   unhandledRejection: TypeError: NetworkError when attempting to fetch resource.
+[01:23:52.912] Browser ERROR   unhandledRejection: TypeError: NetworkError when attempting to fetch resource.
+[01:44:53.969] Server  LOG     ✓ Compiled in 503ms
+[01:49:54.996] Server  ERROR   ⨯ ReferenceError: name is not defined
+[01:50:29.247] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:50:29.272] Server  LOG     ✓ Compiled in 243ms
+[01:51:38.366] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:51:38.419] Server  LOG     ✓ Compiled in 106ms
+[01:54:29.499] Server  LOG     ✓ Compiled in 975ms
+[01:54:29.503] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:36:47.182] Server  LOG     ✓ Compiled in 410ms
+[02:36:47.197] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:37:43.775] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:37:43.798] Server  LOG     ✓ Compiled in 92ms
+[02:37:52.658] Browser ERROR   unhandledRejection: ReferenceError: router is not defined
+[02:38:07.878] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:07.897] Server  LOG     ✓ Compiled in 827ms
+[02:38:19.831] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:19.856] Server  LOG     ✓ Compiled in 76ms
+[02:38:36.893] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:36.918] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:36.937] Server  LOG     ✓ Compiled in 230ms
+[02:38:56.799] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:38:56.828] Server  LOG     ✓ Compiled in 74ms
+[02:39:02.787] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:39:02.796] Server  LOG     ✓ Compiled in 82ms
+[02:39:16.834] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:39:16.869] Server  LOG     ✓ Compiled in 152ms
+[02:39:47.026] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[02:39:59.332] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:39:59.332] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/register/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:39:59.348] Server  LOG     ✓ Compiled in 335ms
+[02:39:59.354] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:40:21.795] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/register/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:40:21.825] Server  LOG     ✓ Compiled in 73ms
+[02:40:49.044] Browser ERROR   unhandledRejection: ReferenceError: router is not defined
+[02:41:59.120] Browser ERROR   unhandledRejection: ReferenceError: router is not defined
+[02:42:32.989] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:42:33.009] Server  LOG     ✓ Compiled in 119ms
+[02:42:40.597] Browser ERROR   unhandledRejection: TypeError: can't access property "push", __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.router is undefined
+[02:43:48.140] Server  LOG     ✓ Compiled in 147ms
+[02:43:48.144] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:49:14.233] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/login/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:49:14.244] Server  LOG     ✓ Compiled in 903ms
+[02:50:16.142] Server  LOG     ✓ Compiled in 323ms
+[02:50:31.440] Server  LOG     ✓ Compiled in 221ms

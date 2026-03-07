@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Administrator/Desktop/stuff/projects/SpringMaster/Frontend/app/page.tsx"],"sourcesContent":["export default function Home() {\n\n  return (\n    <div>\n      <Navigation />\n      <h1>Home</h1>\n    </div>\n  );\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IAEtB,qBACE,8OAAC;;0BACC,8OAAC;;;;;0BACD,8OAAC;0BAAG;;;;;;;;;;;;AAGV"}}]
+}

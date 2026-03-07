@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Administrator/Desktop/stuff/projects/SpringMaster/Frontend/app/users/page.tsx"],"sourcesContent":["export default async function Users() {\r\n    const users = await fetch(\"http://localhost:8080/users\")\r\n        .then((res) => res.json());\r\n    return (\r\n        <div>\r\n            <h1>Users</h1>\r\n            <ul>\r\n                {users.map((user: any) => (\r\n                    <li key={user.id}>\r\n                        {user.name}\r\n                        {user.email}\r\n                    </li>\r\n                ))}\r\n            </ul>\r\n        </div>\r\n    );\r\n}"],"names":[],"mappings":";;;;;;AAAe,eAAe;IAC1B,MAAM,QAAQ,MAAM,MAAM,+BACrB,IAAI,CAAC,CAAC,MAAQ,IAAI,IAAI;IAC3B,qBACI,8OAAC;;0BACG,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BACI,MAAM,GAAG,CAAC,CAAC,qBACR,8OAAC;;4BACI,KAAK,IAAI;4BACT,KAAK,KAAK;;uBAFN,KAAK,EAAE;;;;;;;;;;;;;;;;AAQpC"}}]
+}

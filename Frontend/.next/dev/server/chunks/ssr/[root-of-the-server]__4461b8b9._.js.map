@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Administrator/Desktop/stuff/projects/SpringMaster/Frontend/app/posts/page.jsx"],"sourcesContent":["export default async function Posts() {\r\n    const res = await fetch(\"http://localhost:8080/posts\")\r\n    const posts = await res.json()\r\n    return (\r\n        <div>\r\n            <Navigation />\r\n            <h1>Posts</h1>\r\n            <ul>\r\n                {posts.map((post) => (\r\n                    <li key={post.id}>\r\n                        {post.title}\r\n                        {post.description}\r\n                    </li>\r\n                ))}\r\n            </ul>\r\n        </div>\r\n    );\r\n}"],"names":[],"mappings":";;;;;;AAAe,eAAe;IAC1B,MAAM,MAAM,MAAM,MAAM;IACxB,MAAM,QAAQ,MAAM,IAAI,IAAI;IAC5B,qBACI,8OAAC;;0BACG,8OAAC;;;;;0BACD,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BACI,MAAM,GAAG,CAAC,CAAC,qBACR,8OAAC;;4BACI,KAAK,KAAK;4BACV,KAAK,WAAW;;uBAFZ,KAAK,EAAE;;;;;;;;;;;;;;;;AAQpC"}}]
+}
