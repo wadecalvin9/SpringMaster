@@ -1,4 +1,4 @@
-package com.wadecalvin.spring.Models;
+package com.wadecalvin.greenhouse.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,22 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Posts {
-
-    @Id
+public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
-    private  String title;
-    private  String description;
+    private String title;
+    private String description;
+    private String imgurl;
+    private int price;
 
-    public Posts(){
+    public Product(){
 
     }
 
-    public Posts(Long id, String title, String description) {
+    public Product(Long id, String title, String description, String imgurl, int price) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.imgurl = imgurl;
+        this.price = price;
     }
 
     public Long getId() {
@@ -46,5 +49,21 @@ public class Posts {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImgurl() {
+        return imgurl;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

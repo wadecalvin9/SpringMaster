@@ -1,4 +1,4 @@
-package com.wadecalvin.spring.Models;
+package com.wadecalvin.greenhouse.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +10,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private  String name;
+    private  String username;
     private String email;
     private String password;
 
@@ -20,7 +20,7 @@ public class Users {
 
     public Users(Long id, String name, String email, String password) {
         this.id = id;
-        this.name = name;
+        this.username = name;
         this.email = email;
         this.password = password;
     }
@@ -34,10 +34,10 @@ public class Users {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
     public String getEmail() {
         return email;

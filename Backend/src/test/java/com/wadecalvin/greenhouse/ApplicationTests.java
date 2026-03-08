@@ -1,4 +1,4 @@
-package com.wadecalvin.spring;
+package com.wadecalvin.greenhouse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

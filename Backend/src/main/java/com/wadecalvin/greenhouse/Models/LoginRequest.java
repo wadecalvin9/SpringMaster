@@ -1,4 +1,4 @@
-package com.wadecalvin.spring.Models;
+package com.wadecalvin.greenhouse.Models;
 
 public class LoginRequest {
     private String email;

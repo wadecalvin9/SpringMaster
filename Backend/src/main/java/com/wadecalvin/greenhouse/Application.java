@@ -1,8 +1,7 @@
-package com.wadecalvin.spring;
+package com.wadecalvin.greenhouse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 public class Application {
