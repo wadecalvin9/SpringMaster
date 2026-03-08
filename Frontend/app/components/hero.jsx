@@ -39,30 +39,8 @@ export default function Hero() {
                                 className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
                                 priority
                             />
-                            {/* Overlay gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                            {/* Floating info card - more compact */}
-                            <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-lg shadow-inner">
-                                            🚚
-                                        </div>
-                                        <div>
-                                            <p className="text-white font-bold text-sm leading-tight">Live Tracking</p>
-                                            <p className="text-green-400 text-xs">Arriving in 18 mins</p>
-                                        </div>
-                                    </div>
-                                    <div className="hidden sm:flex -space-x-2">
-                                        {[1, 2, 3].map((i) => (
-                                            <div key={i} className="w-6 h-6 rounded-full border-2 border-[#1a3a2e] bg-slate-800 flex items-center justify-center overflow-hidden">
-                                                <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600" />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

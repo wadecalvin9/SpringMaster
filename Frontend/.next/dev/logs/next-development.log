@@ -1,9 +1,0 @@
-[00:00:04.847] Server  LOG     ✓ Ready in 3.2s
-[00:00:07.360] Server  WARN    ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
-[00:01:11.898] Server  LOG     ✓ Compiled in 134ms
-[00:01:13.513] Browser WARN    Image with src "https://images.pexels.com/photos/6707511/pexels-photo-6707511.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:01:23.710] Server  LOG     ✓ Compiled in 166ms
-[00:02:49.049] Server  LOG     ✓ Compiled in 335ms
-[00:04:14.106] Server  LOG     ✓ Compiled in 270ms
-[00:05:19.361] Server  LOG     ✓ Compiled in 153ms
