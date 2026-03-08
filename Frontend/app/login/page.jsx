@@ -27,6 +27,10 @@ export default function Login() {
                 }),
             })
             if (res.ok) {
+                const user = await res.json();
+                localStorage.setItem("user", JSON.stringify(user));
+                // Dispatch event for components to listen to storage changes
+                window.dispatchEvent(new Event("storage"));
                 router.push("/");
             } else {
                 setError("Login failed. Please check your credentials.");

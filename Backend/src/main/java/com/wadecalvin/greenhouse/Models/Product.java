@@ -13,18 +13,20 @@ public class Product {
     private String title;
     private String description;
     private String imgurl;
-    private int price;
+    private Integer price;
 
     public Product(){
 
     }
 
-    public Product(Long id, String title, String description, String imgurl, int price) {
+    public Product(Long id, String title, String description, String imgurl, Integer price) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.imgurl = imgurl;
         this.price = price;
+
+
     }
 
     public Long getId() {
@@ -59,11 +61,14 @@ public class Product {
         this.imgurl = imgurl;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+
+
+    public void setPrice(Integer price) {
         this.price = price;
     }
+
 }

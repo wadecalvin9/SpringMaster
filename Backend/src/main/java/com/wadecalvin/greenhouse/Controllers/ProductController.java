@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("localhost:3000")
+@CrossOrigin("http://localhost:3000/")
 @RequestMapping("/api")
 @RestController
 public class ProductController {

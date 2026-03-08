@@ -3,8 +3,9 @@ package com.wadecalvin.greenhouse.Repositories;
 import com.wadecalvin.greenhouse.Models.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<Users, Long> {
-Users findByname(String name);
+import java.util.Optional;
 
-    Users findByEmail(String email);
+public interface UserRepository extends JpaRepository<Users, Long> {
+    Optional<Users> findByName(String name);
+    Optional<Users> findByEmail(String email);
 }

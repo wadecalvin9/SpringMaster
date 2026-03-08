@@ -6,18 +6,22 @@ export default async function Users() {
     const users = await res.json()
 
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col">
+        <div className="min-h-screen bg-[#061e14] flex flex-col relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-green-500/10 rounded-full blur-[120px]" />
+                <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-green-600/5 rounded-full blur-[120px]" />
+            </div>
             <Navigation />
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 w-full">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                     <div>
-                        <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Users</h1>
-                        <p className="mt-1 text-sm text-slate-500">A detailed list of all registered users in your application.</p>
+                        <h1 className="text-3xl font-extrabold text-white tracking-tight">Community <span className="text-green-500">Members</span></h1>
+                        <p className="mt-1 text-sm text-slate-400 font-medium">A detailed list of all registered users in your application.</p>
                     </div>
                     <div className="mt-4 md:mt-0">
                         <Link
                             href="/users/create"
-                            className="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-all focus:outline-none ring-2 ring-transparent ring-offset-2 focus:ring-slate-900"
+                            className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-500 text-white text-sm font-bold rounded-xl shadow-xl shadow-green-900/30 hover:shadow-green-500/20 active:scale-95 transition-all focus:outline-none border border-green-500"
                         >
                             Create User
                         </Link>
@@ -28,22 +32,22 @@ export default async function Users() {
                     {users.map((user) => (
                         <div
                             key={user.id}
-                            className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group"
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-[2rem] shadow-sm hover:shadow-green-500/5 hover:border-green-500/30 transition-all group"
                         >
                             <div className="flex items-center space-x-4">
-                                <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold border border-slate-200 uppercase">
-                                    {user.name.charAt(0)}
+                                <div className="h-12 w-12 rounded-2xl bg-green-500/20 flex items-center justify-center text-green-400 font-bold border border-green-500/30 uppercase text-lg">
+                                    {user.name ? user.name.charAt(0) : '?'}
                                 </div>
                                 <div>
-                                    <h2 className="text-sm font-bold text-slate-900 group-hover:text-slate-700 transition-colors uppercase tracking-wider">{user.name}</h2>
-                                    <p className="text-sm text-slate-500 font-medium lowercase tracking-tight">{user.email}</p>
+                                    <h2 className="text-sm font-bold text-white group-hover:text-green-400 transition-colors uppercase tracking-wider">{user.name}</h2>
+                                    <p className="text-xs text-slate-400 font-medium lowercase tracking-tight mt-0.5">{user.email}</p>
                                 </div>
                             </div>
                         </div>
                     ))}
                     {users.length === 0 && (
-                        <div className="col-span-full py-12 text-center bg-white rounded-xl border border-dashed border-slate-300">
-                            <p className="text-slate-500">No users found. Start by creating one!</p>
+                        <div className="col-span-full py-12 text-center bg-white/5 rounded-[2rem] border border-dashed border-white/10">
+                            <p className="text-slate-400 font-medium">No users found. Start by creating one!</p>
                         </div>
                     )}
                 </div>
