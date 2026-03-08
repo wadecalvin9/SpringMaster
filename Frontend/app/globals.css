@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #061e14;
+    --green-primary: #16a34a;
+    --green-hover: #22c55e;
+  }
+
+  html {
+    background-color: var(--bg-dark);
+    /* Prevent layout shift when scrollbar appears */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* This ensures overscroll matches the theme */
+    overscroll-behavior-y: contain;
+  }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #04140d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a3a2d;
+    border-radius: 10px;
+    border: 2px solid #04140d;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #16a34a;
+    box-shadow: 0 0 10px rgba(22, 163, 74, 0.2);
+  }
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a3a2d #04140d;
+}

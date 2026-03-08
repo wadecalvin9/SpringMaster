@@ -61,6 +61,28 @@ public class CartController {
         }
     }
 
+    @PutMapping("/cart/update/{itemId}")
+    public cartitem updateQuantity(@PathVariable Long itemId, @RequestBody cartitem update) {
+        cartitem item = itemsrepo.findById(itemId)
+                .orElseThrow(() -> new RuntimeException("Cart item not found"));
+        
+        if (update.getQuantity() != null && update.getQuantity() > 0) {
+            item.setQuantity(update.getQuantity());
+            if (item.getProduct() != null && item.getProduct().getPrice() != null) {
+                item.setTotal(item.getQuantity() * item.getProduct().getPrice());
+            }
+            return itemsrepo.save(item);
+        } else {
+            itemsrepo.delete(item);
+            return null;
+        }
+    }
+
+    @DeleteMapping("/cart/remove/{itemId}")
+    public void removeFromCart(@PathVariable Long itemId) {
+        itemsrepo.deleteById(itemId);
+    }
+
     @PostMapping("/cart/checkout/user/{userId}")
     public List<cartitem> checkoutUser(@PathVariable Long userId) {
         List<cartitem> userItems = itemsrepo.findByUserId(userId);
@@ -69,6 +91,8 @@ public class CartController {
                 item.setTotal(item.getQuantity() * item.getProduct().getPrice());
             }
         }
+        // Instead of clear for now, we just save totals. 
+        // Real checkout would move to an Orders table.
         return itemsrepo.saveAll(userItems);
     }
 }

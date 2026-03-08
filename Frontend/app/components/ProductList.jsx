@@ -4,6 +4,14 @@ import Link from "next/link";
 
 export default function ProductList({ products }) {
     const [addingId, setAddingId] = useState(null);
+    const [quantities, setQuantities] = useState({});
+
+    function updateLocalQty(id, delta) {
+        setQuantities(prev => ({
+            ...prev,
+            [id]: Math.max(1, (prev[id] || 1) + delta)
+        }));
+    }
 
     async function addToCart(product) {
         const savedUser = localStorage.getItem("user");
@@ -13,6 +21,7 @@ export default function ProductList({ products }) {
         }
 
         const user = JSON.parse(savedUser);
+        const qty = quantities[product.id] || 1;
         setAddingId(product.id);
         
         try {
@@ -22,7 +31,7 @@ export default function ProductList({ products }) {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    quantity: 1,
+                    quantity: qty,
                     user: { id: user.id },
                     product: { id: product.id }
                 }),
@@ -31,6 +40,8 @@ export default function ProductList({ products }) {
             if (res.ok) {
                 // Trigger storage event to refresh nav count
                 window.dispatchEvent(new Event("storage"));
+                // Reset local qty
+                setQuantities(prev => ({ ...prev, [product.id]: 1 }));
             }
         } catch (err) {
             console.error("Error adding to cart:", err);
@@ -68,29 +79,59 @@ export default function ProductList({ products }) {
                             {product.description}
                         </p>
 
-                        <div className="pt-2 flex items-center justify-between mt-auto">
-                            <p className="text-xl font-black text-white">
-                                <span className="text-green-500 text-sm font-bold mr-0.5">Ksh</span>
-                                {product.price}
-                            </p>
+                        <div className="pt-4 flex flex-col gap-3 mt-auto">
+                            <div className="flex items-center justify-between">
+                                <p className="text-xl font-black text-white">
+                                    <span className="text-green-500 text-sm font-bold mr-0.5">Ksh</span>
+                                    {product.price}
+                                </p>
+                                
+                                {/* Local Qty Selector */}
+                                <div className="flex items-center gap-2 bg-white/5 p-1 rounded-lg border border-white/5 scale-90">
+                                    <button 
+                                        onClick={() => updateLocalQty(product.id, -1)}
+                                        className="w-6 h-6 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3 h-3">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
+                                        </svg>
+                                    </button>
+                                    <span className="text-xs text-white font-bold w-4 text-center">{quantities[product.id] || 1}</span>
+                                    <button 
+                                        onClick={() => updateLocalQty(product.id, 1)}
+                                        className="w-6 h-6 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3 h-3">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
                             <button 
                                 onClick={() => addToCart(product)}
                                 disabled={addingId === product.id}
-                                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all active:scale-90 shadow-lg ${
+                                className={`w-full py-2.5 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg font-bold text-xs ${
                                     addingId === product.id 
                                     ? "bg-green-500/50 cursor-not-allowed" 
-                                    : "bg-green-600 hover:bg-green-500 shadow-green-900/40"
+                                    : "bg-green-600 hover:bg-green-500 shadow-green-900/40 text-white"
                                 }`}
                             >
                                 {addingId === product.id ? (
-                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
+                                    <>
+                                        <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        <span>Adding...</span>
+                                    </>
                                 ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>
+                                    <>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                        <span>Add {quantities[product.id] > 1 ? `(${quantities[product.id]})` : ""} to Cart</span>
+                                    </>
                                 )}
                             </button>
                         </div>
