@@ -27,6 +27,7 @@ export default function Cart() {
                 setCartItems(data);
             }
         } catch (err) {
+            <Error />
             console.error("Failed to fetch cart:", err);
         } finally {
             setIsLoading(false);
@@ -131,7 +132,7 @@ export default function Cart() {
                         <div className="lg:col-span-2 space-y-4">
                             {cartItems.map((item) => (
                                 <div key={item.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-5 flex items-center gap-6 group transition-all hover:bg-white/10 hover:border-green-500/20 relative">
-                                    <button 
+                                    <button
                                         onClick={() => handleRemove(item.id)}
                                         className="absolute top-4 right-4 p-2 text-slate-500 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
                                     >
@@ -141,9 +142,9 @@ export default function Cart() {
                                     </button>
 
                                     <div className="h-24 w-24 bg-[#0a271a] rounded-2xl overflow-hidden p-2 flex-shrink-0">
-                                        <img 
-                                            src={item.product?.imgurl || "https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg"} 
-                                            alt={item.product?.title} 
+                                        <img
+                                            src={item.product?.imgurl || "https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg"}
+                                            alt={item.product?.title}
                                             className="w-full h-full object-contain transition-transform group-hover:scale-110"
                                         />
                                     </div>
@@ -152,7 +153,7 @@ export default function Cart() {
                                         <p className="text-sm text-slate-400 line-clamp-1">{item.product?.description}</p>
                                         <div className="mt-4 flex items-center justify-between">
                                             <div className="flex items-center gap-3 bg-white/5 p-1 rounded-xl border border-white/5">
-                                                <button 
+                                                <button
                                                     onClick={() => handleQuantityChange(item, -1)}
                                                     className="w-8 h-8 flex items-center justify-center text-white hover:bg-white/10 rounded-lg transition-colors"
                                                 >
@@ -161,7 +162,7 @@ export default function Cart() {
                                                     </svg>
                                                 </button>
                                                 <span className="w-8 text-center text-white font-bold">{item.quantity}</span>
-                                                <button 
+                                                <button
                                                     onClick={() => handleQuantityChange(item, 1)}
                                                     className="w-8 h-8 flex items-center justify-center text-white hover:bg-white/10 rounded-lg transition-colors"
                                                 >
@@ -197,7 +198,7 @@ export default function Cart() {
                                         <span className="text-2xl font-black text-white">Ksh {subtotal}</span>
                                     </div>
                                 </div>
-                                <button 
+                                <button
                                     onClick={handleCheckout}
                                     disabled={isCheckingOut}
                                     className="w-full py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-2xl shadow-xl shadow-green-900/40 transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2"
